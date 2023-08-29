@@ -1,0 +1,16 @@
+---
+import Layout from '../layouts/Layout.astro'
+import Card from '../components/Card.astro'
+---
+
+<Layout title="Tomy Blog">
+	<h1 class="text-3xl text-white font-bold">Tomy.blog</h1>
+
+	<ul role="list" class="link-card-grid">
+		<Card
+			title="Documentation"
+			date="27-08-2023"
+			tags={['Documentation', 'Tomy']}
+		/>
+	</ul>
+</Layout>
