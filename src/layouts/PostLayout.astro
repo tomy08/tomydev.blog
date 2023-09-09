@@ -1,0 +1,32 @@
+---
+import type { CollectionEntry } from 'astro:content'
+
+import { formatDate } from '../utils/formatDate'
+import Layout from './Layout.astro'
+
+interface Props {
+	post: CollectionEntry<'blog'>
+}
+const props = Astro.props
+const { title, date, tags, image } = props.post.data
+const formattedDate = formatDate(date)
+---
+
+<Layout title={title}>
+	<main class="p-4">
+		<h1 class="text-4xl font-bold">{title}</h1>
+		<p class="text-gray-500">{formattedDate}</p>
+		<div class="my-2 flex flex-wrap gap-1">
+			{
+				tags.map((tag) => (
+					<span class="whitespace-nowrap rounded-full bg-purple-100 px-2.5 py-0.5 text-xs text-purple-600 dark:bg-purple-600 dark:text-purple-100">
+						{tag}
+					</span>
+				))
+			}
+		</div>
+
+		{image && <img src={image} alt={title} class="my-4" />}
+		<slot />
+	</main>
+</Layout>

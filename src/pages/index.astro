@@ -1,16 +1,27 @@
 ---
 import Layout from '../layouts/Layout.astro'
 import Card from '../components/Card.astro'
+import Header from '../components/Header.astro'
+
+import { getCollection } from 'astro:content'
+
+const posts = (await getCollection('blog'))
+	.filter((post) => post.slug.startsWith('en'))
+	.sort((a, b) => b.data.date - a.data.date)
 ---
 
 <Layout title="Tomy Blog">
-	<h1 class="text-3xl text-white font-bold">Tomy.blog</h1>
-
-	<ul role="list" class="link-card-grid">
-		<Card
-			title="Documentation"
-			date="27-08-2023"
-			tags={['Documentation', 'Tomy']}
-		/>
+	<Header />
+	<ul role="list" class="flex justify-between items-center flex-wrap gap-1">
+		{
+			posts.map((post) => (
+				<Card
+					title={post.data.title}
+					date={post.data.date}
+					tags={post.data.tags}
+					slug={post.slug}
+				/>
+			))
+		}
 	</ul>
 </Layout>
