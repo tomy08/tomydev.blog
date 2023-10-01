@@ -1,22 +1,22 @@
 {
-  "name": "tomy08.blog",
-  "type": "module",
-  "version": "0.0.1",
-  "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
-  },
-  "dependencies": {
-    "@astrojs/mdx": "^1.0.0",
-    "@astrojs/tailwind": "^5.0.0",
-    "astro": "^3.0.10",
-    "tailwindcss": "^3.0.24"
-  },
-  "devDependencies": {
-    "prettier": "2.8.4",
-    "prettier-plugin-astro": "0.8.0"
-  }
+	"name": "tomy08.blog",
+	"type": "module",
+	"version": "0.0.1",
+	"scripts": {
+		"dev": "astro dev",
+		"start": "astro dev",
+		"build": "astro build",
+		"preview": "astro preview",
+		"astro": "astro"
+	},
+	"dependencies": {
+		"@astrojs/mdx": "^1.0.0",
+		"@astrojs/tailwind": "^5.0.0",
+		"astro": "^3.0.10",
+		"tailwindcss": "^3.0.24"
+	},
+	"devDependencies": {
+		"prettier": "2.8.4",
+		"prettier-plugin-astro": "0.8.0"
+	}
 }

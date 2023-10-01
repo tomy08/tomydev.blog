@@ -9,7 +9,10 @@ export interface Props {
 
 const { title, date, tags, slug } = Astro.props
 
-const formattedDate = formatDate(date)
+
+const { lang } = Astro.params
+
+const formattedDate = formatDate(date, lang)
 ---
 
 <article

@@ -1,27 +1,12 @@
 ---
 import Layout from '../layouts/Layout.astro'
-import Card from '../components/Card.astro'
-import Header from '../components/Header.astro'
-
-import { getCollection } from 'astro:content'
-
-const posts = (await getCollection('blog'))
-	.filter((post) => post.slug.startsWith('en'))
-	.sort((a, b) => b.data.date - a.data.date)
 ---
 
+<script is:inline>
+const lang = window.navigator.language.split('-')[0]
+window.location.replace(`/${lang}`)
+</script>
+
 <Layout title="Tomy Blog">
-	<Header />
-	<ul role="list" class="flex justify-between items-center flex-wrap gap-1">
-		{
-			posts.map((post) => (
-				<Card
-					title={post.data.title}
-					date={post.data.date}
-					tags={post.data.tags}
-					slug={post.slug}
-				/>
-			))
-		}
-	</ul>
+	<p>Redirecting...</p>
 </Layout>
