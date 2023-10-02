@@ -18,7 +18,7 @@ const posts = (await getCollection('blog'))
 	.sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
 ---
 
-<Layout title="Tomy Blog">
+<Layout title="Tomy Blog" lang={lang === 'es' ? 'es_ES' : 'en'}>
 	<Header />
 	<ul role="list" class="flex justify-between items-center flex-wrap gap-1">
 		{
