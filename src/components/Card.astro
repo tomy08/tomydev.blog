@@ -18,13 +18,13 @@ const formattedDate = formatDate(date, lang)
 <article
 	class="md:w-[49%] w-full p-1 rounded-xl bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 shadow-md transition-all hover:bg-[length:200%_200%] hover:shadow-sm duration-300 shadow-gray-600/25 my-4"
 >
-	<div class="rounded-[10px] bg-white p-2 dark:bg-gray-900 sm:p-4">
+	<div class="rounded-[10px]  p-2 bg-gray-900 sm:p-4">
 		<time class="block text-xs text-gray-400">
 			{formattedDate}
 		</time>
 
 		<a href={slug}>
-			<h3 class="mt-0.5 text-lg font-medium text-gray-900 dark:text-white">
+			<h3 class="mt-0.5 text-lg font-medium  text-white">
 				{title}
 			</h3>
 		</a>
@@ -32,7 +32,7 @@ const formattedDate = formatDate(date, lang)
 		<div class="mt-2 flex flex-wrap gap-1">
 			{
 				tags.map((tag) => (
-					<span class="whitespace-nowrap rounded-full bg-purple-100 px-2.5 py-0.5 text-xs text-purple-600 dark:bg-purple-600 dark:text-purple-100">
+					<span class="whitespace-nowrap rounded-full  px-2.5 py-0.5 text-xs  bg-purple-600 text-purple-100">
 						{tag}
 					</span>
 				))

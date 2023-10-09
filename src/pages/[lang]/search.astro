@@ -4,7 +4,9 @@ import Card from '../../components/Card.astro'
 import Header from '../../components/Header.astro'
 
 import { getCollection } from 'astro:content'
-const search = Astro.url.search.split('?')[1].toLowerCase()
+
+const search = Astro.url.search.split('?')[1].toLowerCase().replaceAll('%20', ' ')
+
 
 export function getStaticPaths() {
 	return [{ params: { lang: 'en' } }, { params: { lang: 'es' } }]
@@ -14,8 +16,9 @@ const { lang } = Astro.params
 
 const posts = (await getCollection('blog'))
 	.filter((post) => post.slug.startsWith(lang!))
-	.filter((post) => post.data.title.toLowerCase().includes(search))
+	.filter((post) => post.data.title.toLowerCase().includes(search.toLowerCase()))
 	.sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
+
 ---
 
 <Layout title="Tomy Blog" lang={lang === 'es' ? 'es_ES' : 'en'}>
