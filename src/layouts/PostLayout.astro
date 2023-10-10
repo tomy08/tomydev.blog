@@ -24,7 +24,7 @@ const formattedDate = formatDate(date)
 		<div class="my-2 flex flex-wrap gap-1">
 			{
 				tags.map((tag) => (
-					<span class="whitespace-nowrap rounded-full bg-purple-100 px-2.5 py-0.5 text-xs text-purple-600 bg-purple-600 text-purple-100">
+					<span class="whitespace-nowrap rounded-full  px-2.5 py-0.5 text-xs  bg-purple-600 text-purple-100">
 						{tag}
 					</span>
 				))
@@ -40,6 +40,9 @@ const formattedDate = formatDate(date)
 </Layout>
 
 <style is:global>
+	*{
+		@apply text-white
+	}
 	#content {
 		font-size: 1rem;
 		padding: 0.2rem 0;
